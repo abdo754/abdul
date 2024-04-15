@@ -11,6 +11,7 @@
 //     });
 // });
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.toggle');
 
