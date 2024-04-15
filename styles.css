@@ -1,0 +1,131 @@
+body {
+    /* Shady gradient background */
+    background: linear-gradient(135deg, #45567d 0%, #2b3a58 25%, #1b283d 50%, #2b3a58 75%, #45567d 100%);
+    /* Ensure the gradient covers the full page */
+    min-height: 100vh;
+    /* Make the background fixed when scrolling */
+    background-attachment: fixed;
+    /* Set up for animation */
+    background-size: 200% 200%;
+    animation: GradientShift 30s ease infinite; /* Slower transition for a more subtle effect */
+  }
+  
+  /* Keyframes for the gradient animation, adjusted for a gentle shift */
+  @keyframes GradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+/* Base styles for the ul elements */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    transform-origin: 50% 50%;
+    width: 200px; /* Diameter of the circle */
+    height: 200px; /* Diameter of the circle */
+}
+
+/* Style each li */
+ ul li {
+  
+}
+
+ul li:hover {
+    transform: scale(1.1); /* Enlarge item on hover */
+} */
+
+/* Positioning each li in a circle */
+ul.code li, ul.photo li, ul.edit li, ul.Connnect li {
+    --item-count: 4; /* Adjust this based on the number of items in your list */
+    --angle: calc(360deg / var(--item-count) * (var(--index) - 1));
+    transform: rotate(var(--angle)) translate(100px) rotate(calc(var(--angle) * -1));
+}
+
+/* Profile image style */
+.profile-image {
+    width: 600px; /* Desired width */
+    height: auto; /* Adjusts height to maintain aspect ratio */
+   
+    border: 5px solid #ff00006c; /* Adds a solid blue border, adjust the color to match your theme */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+    display: block; /* Makes the image a block element */
+    margin: 0 auto;
+}
+
+.profile-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the image on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Intensifies the shadow on hover for a pop effect */
+}
+
+
+
+/* Styles for toggling titles */
+.toggle {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+.list-container {
+    float: right;
+    width: 300px; /* Adjust the width as needed */
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Arial', sans-serif; /* Choose a font that fits your design */
+    color: #007BFF; /* A vibrant blue, adjust the color to fit your theme */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds depth to the text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+h1:hover {
+    transform: scale(1.05); /* Slightly enlarge the title on hover */
+    color: #95655a; /* Change color on hover, choose a color that fits your theme */
+}
+
+h2 {
+     text-align: center; /* Centers the text of h2 elements */
+    margin-left: auto; /* Centers the block if it doesn't take full width */
+    margin-right: 150px;
+}
+
+/* Clear float */
+body:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.intro-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the box */
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.intro-text {
+    text-align: center; /* Center the text */
+    font-size: 18px; /* Adjust font size */
+    line-height: 1.5; /* Adjust line height for better readability */
+    color: #333; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+}
